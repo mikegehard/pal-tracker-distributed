@@ -2,11 +2,11 @@ applications:
 - name: tracker-allocations
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
-  - route: allocations-pal-{UNIQUE_IDENTIFIER}.apps.chicken.pal.pivotal.io
+  - route: allocations-pal-msg.apps.evans.pal.pivotal.io
   memory: 1G
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: http://FILL_ME_IN
+    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-msg.apps.evans.pal.pivotal.io
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
   - tracker-allocations-database
